@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1,
+h2,
+p,
+span {
+    text-align: center;
+    color: white;
+}
+h1 {
+    margin: 32px;
+}
+.logo {
+    margin: 32px;
+    width: 200px;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(128, 128, 128));
+    padding: 10px;
+    min-height: 200px;
+    cursor: pointer;
+}
+.card:hover {
+    scale: 1.01;
+    transition: .3s ease-in-out;
+}
+.id {
+    padding: 4px 10px;
+    background-color: rgba(0, 0, 0, 0.493);
+    border-radius: 8px;
+}
+.card .info {
+    display: flex;
+    flex-direction: column;
+}
+.card .info .main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.card .info .main .xp {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 32px;
+    text-shadow: 2px 2px 8px black;
+    background-color: rgba(0, 0, 0, 0.432);
+    padding: 4px 8px 4px 16px;
+    margin-left: -10px;
+    border-radius: 0 8px 8px 0;
+}
+.card .info .main .svg {
+    width: 100%;
+    height: 220px;
+}
+.card .info .main .gif {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-width: 50px;
+}
+.card:hover .svg {
+    scale: 1.05;
+    z-index: 2;
+    transition: .2s ease-in-out;
+    transform: rotateY(180deg);
+}
+.card .name {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 8px;
+}
+.card .info .hp {
+    position: relative;
+    display: block;
+    height: 8px;
+    width: 100px;
+    background-color: rgb(0, 0, 0);
+    margin: 10px 4px 10px 50px;
+}
+.card .info .hp::before {
+    position: absolute;
+    content: 'HP';
+    display: block;
+    left: -30px;
+    top: -4px;
+}
+.card .info .hp-value {
+    position: absolute;
+    content: '';
+    display: block;
+    height: 8px;
+    background-color: yellowgreen;
+    animation: progressBar 2s ease-in-out;
+}
+@keyframes progressBar {
+    from {
+        width: 0;
+    }
+}
+.card .info .status {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+@media (max-width: 450px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 200px);
+        justify-content: center;
+        gap: 8px;
+    }
+}
